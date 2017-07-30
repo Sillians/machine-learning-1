@@ -10,15 +10,15 @@ Content for Udacity's Machine Learning curriculum, which includes projects and t
 
 Concepts covered: decision tree regression, evaluating regression models, learning curves, grid search with cross validation.
 
-[Finding Donors for CharityML]((/projects/finding_donors)
+[Finding Donors for CharityML](/projects/finding_donors)
 
 Concepts covered: data preprocessing, F-beta scoring, AdaBoost, logistic regression, support vector machines, building a prediction pipeline, extracting feature importance and feature selection.
 
-[Creating Customer Segments]((/projects/customer_segments)
+[Creating Customer Segments](/projects/customer_segments)
 
 Concepts covered: feature visualization, outlier removal, dimensionality reduction (PCA), soft clustering with a Gaussian mixture model.
 
 
-[Train a Smartcab to Drive]((/projects/smartcab)
+[Train a Smartcab to Drive](/projects/smartcab)
 
-[Dog Breed Classifier]((/projects/dog-project)
+[Dog Breed Classifier](/projects/dog-project)

@@ -22,3 +22,4 @@ Concepts covered: feature visualization, outlier removal, dimensionality reducti
 [Train a Smartcab to Drive](/projects/smartcab)
 
 [Dog Breed Classifier](/projects/dog-project)
+Concepts covered: convolutional neural networks, image classification.

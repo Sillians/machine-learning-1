@@ -1490,15 +1490,22 @@ y8zMzMzMrIacZJmZmZmZmdWQkywzMzMzM7Ma+n9zZGJQjaEdxgAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Safety:</p>
+<p><strong>Safety:</strong></p>
 <ul>
 <li>Light</li>
 <li>Oncoming</li>
 <li>Left</li>
 </ul>
 <p>Understanding the agent's surroundings allows it to avoid taking an action which would allow it to collide with another vehicle. In this environment, all of the cars behave the traffic laws and drive at the same speed. Thus, the only information we need about other vehicles is for when there are oncoming vehicles for when we are trying to turn left, and when there are cars coming from the left for right-turns on red. According to US traffic laws, vehicles turning left must yield to those turning right, which have the "right-of-way". Therefore, assuming that all other vehicles behave properly, they will yield when the vehicle is turning right and thus we do not need to sense for cars on the Smartcab's right.</p>
+<p>Assuming other vehicles properly yield, the following describes information the Smartcab needs to perform each of it's valid actions:</p>
+<ul>
+<li>'Left': light must be green, no oncoming traffic</li>
+<li>'Forward': light must be green</li>
+<li>'Right': light must be green, or light is red but there is no traffic coming from the left</li>
+<li>'None': no information needed</li>
+</ul>
 <p>Additionally, the agent should be able to learn that it is safer to move out of it's current state when the color of the light is green.</p>
-<p>Efficiency:</p>
+<p><strong>Efficiency:</strong></p>
 <ul>
 <li>Waypoint</li>
 </ul>
@@ -4340,7 +4347,8 @@ QmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
-Future rewards are not necessary for the smartcab because it has a built-in navigation system. If we did not have directions, we w Additionally, the cars in the environment are constantly changing (and they can cause a negative reward upon collision) so there's no clear way to assign a utility to a sequence of states unless we contain prior knowledge of the other vehicles positions for each state. We could end up overfitting our model to the vehicular arrangements that we have observed, which would be arbitrary for our agent to know and would negatively affect Q-values.</p>
+Future rewards are not necessary for the smartcab because it has a built-in navigation system. If we did not have directions, we would need some large future reward that propagated through the states to guide our Smartcab.</p>
+<p>Additionally, the cars in the environment are constantly changing (and they can cause a negative reward upon collision) so there's no clear way to assign a utility to a sequence of states unless we contain prior knowledge of the other vehicles positions for each state. We could end up overfitting our model to the vehicular arrangements that we have observed, which would be arbitrary for our agent to know and would negatively affect Q-values.</p>
 
 </div>
 </div>

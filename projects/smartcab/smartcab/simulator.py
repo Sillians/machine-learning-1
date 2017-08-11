@@ -51,6 +51,7 @@ class Simulator(object):
         self.current_time = 0.0
         self.last_updated = 0.0
         self.update_delay = update_delay  # duration between each step (in seconds)
+        
 
         self.display = display
         if self.display:

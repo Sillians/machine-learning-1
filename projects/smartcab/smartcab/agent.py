@@ -43,13 +43,12 @@ class LearningAgent(Agent):
         # Update additional class parameters as needed
         # If 'testing' is True, set epsilon and alpha to 0
         
-        # decay_rate = 0.05
         
         if testing:
             self.epsilon, self.alpha = 0, 0
         else:
             self.epsilon = np.exp(-0.006*self.t)
-            # self.epsilon = self.epsilon - decay_rate
+            # self.epsilon = self.epsilon - 0.05
      
         
         self.t = self.t + 1
@@ -132,7 +131,7 @@ class LearningAgent(Agent):
         # Be sure that when choosing an action with highest Q-value that you randomly select between actions that "tie".
         
         # Do this with probability 1-epsilon, otherwise choose randomly in else statement
-        if (self.learning and np.random.random > self.epsilon):
+        if (self.learning and np.random.random() > self.epsilon):
             # Random choice of all possible actions which exist in the state's dictionary that are greater than
             # or equal to the maxQ. The inequality serves as a redudant check for the get_maxQ function. 
             action = np.random.choice([a for a in self.Q[state].keys() if self.Q[state][a] == self.get_maxQ(state)])
@@ -190,7 +189,7 @@ def run():
     #   learning   - set to True to force the driving agent to use Q-learning
     #    * epsilon - continuous value for the exploration factor, default is 1
     #    * alpha   - continuous value for the learning rate, default is 0.5
-    agent = env.create_agent(LearningAgent, learning = True, alpha = 0.7) 
+    agent = env.create_agent(LearningAgent, learning = True, alpha = 0.7) # Optimized: alpha=0.7
     
     ##############
     # Follow the driving agent
@@ -206,7 +205,7 @@ def run():
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    sim = Simulator(env, update_delay = 0.01, log_metrics = True, optimized = True)
+    sim = Simulator(env, update_delay = 0.01, log_metrics = True, optimized = False)
 
     
     ##############
@@ -214,7 +213,7 @@ def run():
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(tolerance = 0.008, n_test = 10) 
+    sim.run(tolerance = 0.008, n_test = 10) # Optimized - 0.008
 
 
 

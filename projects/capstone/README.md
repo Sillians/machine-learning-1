@@ -1,16 +1,29 @@
-# Machine Learning Engineer Nanodegree
-## Specializations
-## Project: Capstone Proposal and Capstone Project
+# Machine Learning Engineer Nanodegree Capstone Project
 
+## Overview
+This project attempts to extract useful signal from the text of public company quarterly earnings transcripts. Although the proposed approach does not prove to be successful, this notebook contains interesting analysis and a few potential developments that could improve this model to a useful (and profitable) level. 
 
+Privacy notice: Please do not distribute this notebook.
 
+## Data
+##### Stock price
+Price data is downloaded from Google Finance using the Pandas DataReader. See notebook to run the command to download all necessary data.
 
-**Note**
+##### Quarterly earnings call transcripts
+Transcripts are scraped from [Seeking Alpha](https://seekingalpha.com/) using the Python library [Scrapy](https://docs.scrapy.org/en/latest/).
 
-The Capstone is a two-staged project. The first is the proposal component, where you can receive valuable feedback about your project idea, design, and proposed solution. This must be completed prior to your implementation and submitting for the capstone project.
+To fetch a company transcript, complete the following steps.
 
-You can find the [capstone proposal rubric here](https://review.udacity.com/#!/rubrics/410/view), and the [capstone project rubric here](https://review.udacity.com/#!/rubrics/108/view). Please ensure that you are following directions correctly when submitting these two stages which encapsulate your capstone.
+```
+cd data/
+scrapy crawl transcripts -a symbol=$SYM
+```
 
-You will find an `open_projects` folder in these files. This will be where pre-curated capstone projects are available, should you choose to work on a project already partially designed for you.
+This will download all of the posted earnings call transcripts for company `SYM` and store it as a JSON lines file in `data/company_transcripts/SYM.json`.
 
-Please email [machine-support@udacity.com](mailto:machine-support@udacity.com) if you have any questions.
+## Environment
+Create a new Anaconda environment using the command below to ensure your workspace has all necessary dependencies.
+
+```
+conda env create -f requirements/environment.yml
+```

@@ -26,3 +26,5 @@ Concepts covered: reinforcement learning.
 [Dog Breed Classifier](/projects/dog-project)
 
 Concepts covered: convolutional neural networks, image classification.
+
+
